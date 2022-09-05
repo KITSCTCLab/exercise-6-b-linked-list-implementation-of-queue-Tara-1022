@@ -15,6 +15,9 @@ class Queue:
   Class implementing Queue as a LinkedList
   """
   def __init__(self):
+    """
+    Initialises Queue object with pointers head and tail set to None
+    """
     self.head = None
     self.tail = None
 
@@ -40,7 +43,7 @@ class Queue:
 
   def status(self) -> None:
     """
-    It prints all the elements of stack.
+    It prints all the elements of Queue.
     """
     elements = ""
     curr = self.head
