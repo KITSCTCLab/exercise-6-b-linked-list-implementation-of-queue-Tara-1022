@@ -12,12 +12,14 @@ class Queue:
   def enqueue(self, data) -> None:
     new = Node(data)
     if not self.tail is None:
-     self.tail.next = new
+      self.tail.next = new
     self.tail = new
 
   def dequeue(self) -> None:
     if not self.head is None:
       self.head = self.head.next
+      if self.head is None:
+        self.tail = None
 
   def status(self) -> None:
     elements = ""
@@ -25,7 +27,7 @@ class Queue:
     while not curr is None:
       elements += str(curr.data) + "=>"
       curr = curr.next
-    print(elements + str(curr))
+    print(elements + "None")
 
 
 # Do not change the following code
