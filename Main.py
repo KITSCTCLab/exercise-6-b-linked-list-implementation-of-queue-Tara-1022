@@ -13,6 +13,8 @@ class Queue:
     new = Node(data)
     if not self.tail is None:
       self.tail.next = new
+    if self.head is None:
+      self.head = new
     self.tail = new
 
   def dequeue(self) -> None:
