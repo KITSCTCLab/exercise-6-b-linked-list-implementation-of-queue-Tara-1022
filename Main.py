@@ -1,15 +1,27 @@
 class Node:
+  """
+  Class implementing node of the LinkedList
+  Attributes:
+    -> data - data held by the node
+    -> next - link to the next node
+  """
   def __init__(self, data):
     self.data = data
     self.next = None
 
 
 class Queue:
+  """
+  Class implementing Queue as a LinkedList
+  """
   def __init__(self):
     self.head = None
     self.tail = None
 
   def enqueue(self, data) -> None:
+    """
+    Adds node containing data passed to the rear of the queue
+    """
     new = Node(data)
     if not self.tail is None:
       self.tail.next = new
@@ -18,12 +30,18 @@ class Queue:
     self.tail = new
 
   def dequeue(self) -> None:
+    """
+    Removes node from the rear of the queue
+    """
     if not self.head is None:
       self.head = self.head.next
       if self.head is None:
         self.tail = None
 
   def status(self) -> None:
+    """
+    It prints all the elements of stack.
+    """
     elements = ""
     curr = self.head
     while not curr is None:
